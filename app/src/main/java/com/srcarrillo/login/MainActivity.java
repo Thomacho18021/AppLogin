@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.internal.ManufacturerUtils;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -42,6 +44,31 @@ public class MainActivity extends AppCompatActivity {
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String nombre = txtNombre.getText().toString();
+                String contraseña = txtContraseña.getText().toString();
+
+                int sizeLista = listaUsuario.size();
+                for (int i = 0; i<=sizeLista; i++ ){
+                    String name = listaUsuario.get(i).getNombre();
+                    String genre = listaUsuario.get(i).getGenero();
+                    String password = listaUsuario.get(i).getContraseña();
+
+                    if(nombre.equals(name)){
+                        if(contraseña.equals(password)){
+                            Intent intent = new Intent(MainActivity.this, MenuPrincipal.class);
+                            intent.putExtra("nombre",nombre);
+                            intent.putExtra("genero", genre);
+                            startActivity(intent);
+                        }else{
+                            txtContraseña.setError("Contraseña Incorrecta");
+                        }
+
+                    }else{
+                        txtNombre.setError("Nombre Inválido");
+                    }
+
+                }
+
 
 
             }

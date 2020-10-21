@@ -3,6 +3,7 @@ package com.srcarrillo.login;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationBuilderWithBuilderAccessor;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -46,50 +47,68 @@ public class Registro extends AppCompatActivity {
         btnRegistrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(txtNombre.getText().toString().length()<3){
+                String Nombre = "";
+                String Apellido = "";
+                String Email = "";
+                String Contraseña = "";
+                String Telefono ="";
+                String Genero = "";
+                if (txtNombre.getText().toString().length() < 3) {
                     txtNombre.setError("Mínimo 3 Caracteres");
                     return;
+                } else {
+                    Nombre = txtNombre.getText().toString();
+                }
 
-                }else if(txtApellido.getText().toString().length()<4){
+                if (txtApellido.getText().toString().length() < 4) {
                     txtApellido.setError("Mínimo 4 Caracteres");
                     return;
+                } else {
+                    Apellido = txtApellido.getText().toString();
+                }
 
-                }else if(ValidarMail(txtEmail.getText().toString())==false){
+                if (ValidarMail(txtEmail.getText().toString()) == false) {
                     txtEmail.setError("Email inválido");
                     return;
+                } else{
+                    Email = txtEmail.getText().toString();
+                }
 
-                }else /*if(txtConContraseña.getText().toString().trim() != txtContraseña.getText().toString().trim()){
+                if (ValidarContraseña()==false) {
                     txtConContraseña.setError("Contraseña No Coincide");
-                    Toast.makeText(Registro.this, "Contraseña 1: "+txtContraseña.getText().toString()+"\nContraseña 2: "+txtConContraseña.getText().toString(), Toast.LENGTH_LONG).show();
                     return;
+                } else{
+                    Contraseña = txtContraseña.getText().toString();
+                }
 
-                }else*/ if(txtTelefono.getText().toString().length()<12){
+                if (txtTelefono.getText().toString().length() < 12) {
                     txtTelefono.setError("Teléfono Inválido");
                     return;
 
-                }else if((rbMasculino.isSelected()==false) && (rbFemenino.isSelected()==false)){
+                } else {
+                    Telefono = txtTelefono.getText().toString();
+                }
+
+                if ((rbMasculino.isChecked() == false) && (rbFemenino.isChecked() == false)) {
                     rbFemenino.setError("Selecciona un Género");
                     return;
-
-                }else{
-                    String Nombre = txtNombre.getText().toString();
-                    String Apellido = txtApellido.getText().toString();
-                    String Email = txtEmail.getText().toString();
-                    String Contraseña = txtContraseña.getText().toString();
-                    String Telefono = txtTelefono.getText().toString();
-                    String Genero = "";
-                    if(rbMasculino.isSelected()){
-                        Genero = toString().valueOf(rbMasculino);
-                    } else if(rbFemenino.isSelected()){
-                        Genero = toString().valueOf(rbFemenino);
+                } else{
+                    if (rbMasculino.isChecked()) {
+                        Genero = rbMasculino.getText().toString();
+                    } else if (rbFemenino.isChecked()) {
+                        Genero = rbFemenino.getText().toString();
                     }
-                    Usuario usuario = new Usuario(Nombre,Apellido,Email,Contraseña,Genero,Telefono);
-                    MainActivity.listaUsuario.add(usuario);
-                    Toast.makeText(Registro.this,
-                            "Nombre: "+ Nombre+"\nApellido: "+Apellido+"\nEmail: "+Email+"\nContraseña: "+Contraseña+"\nGénero: "+Genero+"\nTeléfono: "+Telefono ,
-                            Toast.LENGTH_LONG).show();
-
                 }
+                Usuario usuario = new Usuario(Nombre, Apellido, Email, Contraseña, Genero, Telefono);
+                MainActivity.listaUsuario.add(usuario);
+                Toast.makeText(Registro.this,
+                        "Nombre: " + Nombre + "\nApellido: " + Apellido + "\nEmail: " + Email + "\nContraseña: " + Contraseña + "\nGénero: " + Genero + "\nTeléfono: " + Telefono,
+                        Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(Registro.this, MainActivity.class);
+                startActivity(intent);
+
+
+
 
 
 
@@ -99,12 +118,12 @@ public class Registro extends AppCompatActivity {
 
 
     }
-    private boolean ValidarContraseña(String Contraseña, String ConContraseña){
-        if(Contraseña == ConContraseña){
-            return true;
-        }else {
-            return false;
+    private boolean ValidarContraseña(){
+        boolean valor= false;
+        if( txtContraseña.getText().toString().equals(txtConContraseña.getText().toString())){
+            valor = true;
         }
+        return valor;
     }
 
     private static boolean ValidarMail(String email) {

@@ -1,7 +1,7 @@
 package com.srcarrillo.login;
 
 public class Usuario {
-    private String nombre, apellido, correo, contraseña, género, telefono;
+    private String nombre, apellido, correo, contraseña, genero, telefono;
 
     public Usuario() {
     return;
@@ -12,7 +12,7 @@ public class Usuario {
         this.apellido = apellido;
         this.correo = correo;
         this.contraseña = contraseña;
-        this.género = género;
+        this.genero = genero;
         this.telefono = telefono;
     }
 
@@ -48,12 +48,12 @@ public class Usuario {
         this.contraseña = contraseña;
     }
 
-    public String getGénero() {
-        return género;
+    public String getGenero() {
+        return genero;
     }
 
-    public void setGénero(String género) {
-        this.género = género;
+    public void setGenero(String género) {
+        this.genero = genero;
     }
 
     public String getTelefono() {
