@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+    tools:context=".Registro">
+
+    <TextView
+        android:id="@+id/Rtitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="Registro"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="282dp"
+        android:layout_height="526dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="104dp"
+        android:background="#6F000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Rtitulo">
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="0dp"
+            android:layout_height="436dp"
+            android:layout_marginBottom="26dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnRegistro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/txtNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Alan"
+                    android:inputType="textPersonName"
+                    android:shadowColor="@color/white"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A9FFFFFF" />
+
+                <TextView
+                    android:id="@+id/Apellido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Apellido"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/txtApellido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Brito"
+                    android:inputType="textPassword"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A9FFFFFF" />
+
+                <TextView
+                    android:id="@+id/Correo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Email"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/txtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Ejemplo@correo.cl"
+                    android:inputType="textEmailAddress"
+                    android:textAlignment="center"
+                    android:textColorHint="#A9FFFFFF" />
+
+                <TextView
+                    android:id="@+id/Contraseña"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Contraseña"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/txtContraseña"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPassword"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/conContraseña"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Confirmar Contraseña"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/txtConContraseña"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPassword"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/Telefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Teléfono"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/txtTelefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="+56912345678"
+                    android:inputType="phone"
+                    android:maxLength="12"
+                    android:textAlignment="center"
+                    android:textColorHint="#A9FFFFFF" />
+
+                <TextView
+                    android:id="@+id/Genero"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Género"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbMasculino"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Masculino"
+                        android:textColor="#FFFFFF"
+                        android:textColorLink="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/rbFemenino"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Femenino"
+                        android:textColor="#FFFFFF"
+                        android:textColorLink="#FFFFFF" />
+                </RadioGroup>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btnRegistro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:text="Registrate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

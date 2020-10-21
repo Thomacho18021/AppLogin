@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/Titulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="31dp"
@@ -34,13 +34,15 @@
 
         <EditText
             android:id="@+id/txtNombre"
-            android:layout_width="184dp"
-            android:layout_height="42dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Nombre"
+            android:hint="Su Nombre Aquí..."
             android:inputType="textPersonName"
+            android:shadowColor="@color/white"
+            android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
+            android:textColorHint="#A9FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nombre" />
@@ -57,7 +59,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/Contraseña"
+            android:id="@+id/Apellido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
@@ -69,31 +71,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
 
-        <EditText
-            android:id="@+id/txtContraseña"
-            android:layout_width="187dp"
-            android:layout_height="39dp"
-            android:ems="10"
-            android:hint="Contraseña"
-            android:inputType="textPersonName"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.505"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Contraseña" />
-
         <Button
             android:id="@+id/btnIniciar"
             style="@style/Widget.MaterialComponents.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="41dp"
+            android:layout_marginTop="22dp"
             android:text="Iniciar Sesión"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtContraseña" />
+            app:layout_constraintTop_toBottomOf="@+id/txtApellido" />
 
         <Button
             android:id="@+id/btnRegistro"
@@ -115,5 +103,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnIniciar" />
+
+        <EditText
+            android:id="@+id/txtApellido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#A9FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Apellido" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
