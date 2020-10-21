@@ -9,11 +9,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView Nombre, Contraseña, Registrate;
     private EditText txtNombre, txtContraseña;
     private Button btnIniciar, btnRegistro;
+    static ArrayList<Usuario> listaUsuario = new ArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +34,15 @@ public class MainActivity extends AppCompatActivity {
 
         //Button
         btnIniciar = findViewById(R.id.btnIniciar);
-        btnRegistro = findViewById(R.id.btnRegistro);
+        btnRegistro = findViewById(R.id.btnRegistrarse);
+
+
 
 
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
             }
         });

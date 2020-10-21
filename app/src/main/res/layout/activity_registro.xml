@@ -7,19 +7,6 @@
     android:background="@drawable/fondo"
     tools:context=".Registro">
 
-    <TextView
-        android:id="@+id/Rtitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="Registro"
-        android:textColor="#FFFFFF"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="282dp"
         android:layout_height="526dp"
@@ -37,7 +24,7 @@
             android:layout_width="0dp"
             android:layout_height="436dp"
             android:layout_marginBottom="26dp"
-            app:layout_constraintBottom_toTopOf="@+id/btnRegistro"
+            app:layout_constraintBottom_toTopOf="@+id/btnRegistrarse"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -48,9 +35,19 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/Rtitulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Registro"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="36sp" />
+
+                <TextView
                     android:id="@+id/nombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:text="Nombre"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
@@ -84,7 +81,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="Brito"
-                    android:inputType="textPassword"
+                    android:inputType="textPersonName"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
                     android:textColorHint="#A9FFFFFF" />
@@ -205,7 +202,7 @@
         </ScrollView>
 
         <Button
-            android:id="@+id/btnRegistro"
+            android:id="@+id/btnRegistrarse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="26dp"

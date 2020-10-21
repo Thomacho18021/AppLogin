@@ -84,7 +84,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txtApellido" />
 
         <Button
-            android:id="@+id/btnRegistro"
+            android:id="@+id/btnRegistrarse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Registrate"
