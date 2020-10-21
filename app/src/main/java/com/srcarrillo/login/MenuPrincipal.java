@@ -39,7 +39,7 @@ public class MenuPrincipal extends AppCompatActivity {
     }
     public void setTitulo(){
         Bundle extra = getIntent().getExtras();
-        if(extra.get("genero")=="Masculino"){
+        if(extra.get("genero").equals("Masculino")){
             MenuTitle.setText("Bienvenido Sr. "+extra.get("nombre"));
         }else{
             MenuTitle.setText("Bienvenida Srta. "+extra.get("nombre"));

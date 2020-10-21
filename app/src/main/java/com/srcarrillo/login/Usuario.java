@@ -7,7 +7,7 @@ public class Usuario {
     return;
     }
 
-    public Usuario(String nombre, String apellido, String correo, String contraseña, String género, String telefono) {
+    public Usuario(String nombre, String apellido, String correo, String contraseña, String genero, String telefono) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.internal.ManufacturerUtils;
 
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView Nombre, Contraseña, Registrate;
     private EditText txtNombre, txtContraseña;
     private Button btnIniciar, btnRegistro;
-    static ArrayList<Usuario> listaUsuario = new ArrayList();
+    public static ArrayList<Usuario> listaUsuario = new ArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,29 +49,33 @@ public class MainActivity extends AppCompatActivity {
                 String contraseña = txtContraseña.getText().toString();
 
                 int sizeLista = listaUsuario.size();
-                for (int i = 0; i<=sizeLista; i++ ){
-                    String name = listaUsuario.get(i).getNombre();
-                    String genre = listaUsuario.get(i).getGenero();
-                    String password = listaUsuario.get(i).getContraseña();
+                if(sizeLista<1){
+                    Toast.makeText(MainActivity.this, "No hay registros", Toast.LENGTH_LONG).show();
+                    return;
+                }else {
+                    for (int i = 0; i <= sizeLista; i++) {
+                        String name = listaUsuario.get(i).getNombre();
+                        String genre = listaUsuario.get(i).getGenero();
+                        String password = listaUsuario.get(i).getContraseña();
 
-                    if(nombre.equals(name)){
-                        if(contraseña.equals(password)){
-                            Intent intent = new Intent(MainActivity.this, MenuPrincipal.class);
-                            intent.putExtra("nombre",nombre);
-                            intent.putExtra("genero", genre);
-                            startActivity(intent);
-                        }else{
-                            txtContraseña.setError("Contraseña Incorrecta");
+                        if (nombre.equals(name)) {
+                            if (contraseña.equals(password)) {
+                                Intent intent = new Intent(MainActivity.this, MenuPrincipal.class);
+                                intent.putExtra("nombre", nombre);
+                                intent.putExtra("genero", genre);
+                                startActivity(intent);
+                            } else {
+                                txtContraseña.setError("Contraseña Incorrecta");
+                            }
+
+                        } else {
+                            txtNombre.setError("Nombre Inválido");
                         }
 
-                    }else{
-                        txtNombre.setError("Nombre Inválido");
                     }
 
+
                 }
-
-
-
             }
         });
 
